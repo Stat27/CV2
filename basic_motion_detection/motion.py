@@ -13,7 +13,7 @@ while cap.isOpened():
     # clear noises
     gray = cv2.cvtColor(diff,cv2.COLOR_BGR2GRAY)
     
-    # for clean difference
+    # for clean differences
     blur = cv2.GaussianBlur(gray,(5,5),0)
     
     _,thresh = cv2.threshold(blur,20,255,cv2.THRESH_BINARY)

@@ -16,7 +16,7 @@ SobelX = np.uint8(np.absolute(SobelX))
 SobelY = np.uint8(np.absolute(SobelY))
 
 SobelCombined = cv2.bitwise_or(SobelX,SobelY)
-canny = cv2.Canny(img, 100, 200)
+canny = cv2.Canny(img, 120, 200)
 
 titles = ['image','laplacian','SobelX','SobelY','SobelCombined','canny']
 images = [img,lap,SobelX,SobelY,SobelCombined,canny]
