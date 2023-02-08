@@ -20,7 +20,7 @@ while cap.isOpened():
     dilated = cv2.dilate(thresh,None, iterations=3)
     
     contours, hierrachy = cv2.findContours(dilated,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
-    
+    # cv2.drawContours(frame2,contours,-1,(0,255,0),1)
     # draw rectangle around contour
     for contour in contours:
         # find x,y,width,height
@@ -33,7 +33,7 @@ while cap.isOpened():
         cv2.putText(frame1,'status:{}'.format("Movement"),(10,20),cv2.FONT_HERSHEY_SIMPLEX,1,(0,2,2),3)
     # cv2.drawContours(frame1,contours,-1,(255,0,255),2)
     cv2.imshow('feed',frame1)
-    
+    cv2.waitKey(0)
     frame1 = frame2
     ret,frame2 = cap.read()
     
